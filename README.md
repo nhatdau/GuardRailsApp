@@ -6,7 +6,6 @@ Please install Docker, Docker Compose and Mongodb server in your local to run th
 
 ## How to run the application:
 * Clone code from this repository to source folder.
-* Start Mongodb server in your local.
 * Go to source code folder. Execute command: .
     * `sudo docker-compose up -d`
 * Open the browser, go to url: **http://localhost:8080/**. It will display the **"List of security scan results"** page.
@@ -16,4 +15,4 @@ Please install Docker, Docker Compose and Mongodb server in your local to run th
 
 ## Other Informations:
 * We use database **"ScanResultDb"**, collection **"scanresults"** in Mongodb to store security scan results. To ensure uniqueness of id of security scan results in Mongodb, we can create index for field **"id"** using command: `db.collection.createIndex`
-* If you want to run backend, frontend part manually, separate, in each folder **"api"**, **"dashboard"** has Dockerfile for each part. You can build docker image for each part, and run it from docker image. Notes: we use network mode **"host"** for our dockers. 
+* If you want to run backend, frontend part manually, separate, in each folder **"api"**, **"dashboard"** has Dockerfile for each part. You can build docker image for each part, and run it from docker image. Notes: we use network mode **"host"** for our dockers.
