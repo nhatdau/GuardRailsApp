@@ -2,7 +2,7 @@
   "name": "dashboard",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --host 0.0.0.0",
     "test": "jest"
   },
   "dependencies": {

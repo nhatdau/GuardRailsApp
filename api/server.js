@@ -13,7 +13,7 @@ app.use(errorHandler);
 
 const port = process.env.NODE_ENV === 'production' ? 80 : 4000;
 scanResultService.connectDb().then((client) => {
-    const server = app.listen(port, function () {
+    const server = app.listen(port, '0.0.0.0', function () {
         console.log('Server listening on port ' + port);
     });
 })

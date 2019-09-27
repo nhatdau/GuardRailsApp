@@ -7,7 +7,8 @@ module.exports = {
 const BSON = require('bson');
 
 var mongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost';
+var url = 'mongodb://db';
+console.log("db url: " + url);
 global.collection = undefined;
 async function connectDb() {
     const client = await mongoClient.connect(url, {

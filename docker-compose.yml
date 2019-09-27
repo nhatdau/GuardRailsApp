@@ -6,14 +6,24 @@ services:
           context: ./api
           dockerfile: Dockerfile
         image: guardrailsapi
+        ports:
+            - "4000:4000"
         container_name: guardrailsapi
         restart: unless-stopped
-        network_mode: host
+        depends_on:
+            - mongo
     dashboard:
         build:
           context: ./dashboard
           dockerfile: Dockerfile
         image: guardrailsdashboard
         container_name: guardrailsdashboard
+        ports:
+            - "8080:8080"
         restart: unless-stopped
-        network_mode: host
+        depends_on:
+            - api
+    mongo:
+        image: mongo
+        container_name: db
+        restart: always
